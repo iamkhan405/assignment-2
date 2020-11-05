@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>Most frequent items of an array</title>
+</head>
+<script>
+var arr1 = [3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3]; 
+var a = 0, i, j, frequent=1, item;  
+for (i = 0; i < arr1.length; i++) 
+{ 
+for (j = i; j < arr1.length; j++) 
+{ 
+if (arr1[i] == arr1[j]) 
+a++; 
+if (frequent < a) 
+{ 
+frequent=a; 
+item = arr1[i]; 
+} 
+} 
+a= 0; 
+} 
+document.write(item+ " (" + frequent + " times )");
+
+</script>
+<body>
+</body>
+</html>

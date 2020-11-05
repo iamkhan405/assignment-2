@@ -1,0 +1,24 @@
+<html>
+<head>
+<title>Remove items from a dropdown list</title>
+</head>
+<script>
+function remove(dropdown)
+{
+   var i = document.getElementById("dropdown"); 
+   i.remove(i.selectedIndex);
+}
+</script>
+<body>
+<form>
+<select id="dropdown">
+<option>Web Development</option>
+<option>Python</option>
+<option>Fashion Designing</option>
+<option>JavaScript</option>
+<option>Political Science</option>
+</select>
+<input type="button" onclick="remove()" value="Select and Remove">
+</form>
+</body>
+</html>

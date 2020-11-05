@@ -1,0 +1,24 @@
+<html>
+<head>
+<title>Remove duplicates from an array</title>
+</head>
+<script>
+function Remove(arr)
+{
+  var newA= [],i;
+  for(i=0; i < arr.length; i++)
+  {
+  if(newA.indexOf(arr[i]) === -1)  
+  {
+    newA.push(arr[i]);
+  }
+  }
+  return newA;
+}
+var  v = [1,2,3,1,7,6,3,4,3,9];
+var  op = Remove(v);
+document.write(op); 
+</script>
+<body>
+</body>
+</html>

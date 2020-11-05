@@ -1,0 +1,106 @@
+<html>
+<head>
+<title>Digital Clock</title>
+<style>
+
+#clock
+{
+   font-size:35px;
+   color:red;
+   text-shadow:2px 2px 2px white;
+   border:3px groove black;
+   background-color:yellow; 
+   width:195px; 
+   height:40px;
+   text-align:center;   
+}
+#clock1
+{
+   position: relative;
+   font-size:35px;
+   color:red;
+   text-shadow:2px 2px 2px white;
+   border:3px groove black;
+   background-color:yellow; 
+   width:195px; 
+   height:40px;
+   text-align:center;
+   left: 300px;
+   bottom: 45px; 
+}
+
+#btn1
+{
+position: relative;
+left:40px;
+bottom:30px;
+}
+#btn2
+{
+position: relative;
+left:240px;
+bottom:30px;
+}
+
+</style>
+</head>
+
+<script type="text/javascript">
+/* 12 hour format */
+function startTime()
+{
+var today=new Date()
+var h=today.getHours()
+var m=today.getMinutes()
+var s=today.getSeconds()
+var ap="AM";
+if(h>11)
+{ 
+ap="PM";
+}
+if(h>12)
+{
+h=h-12;
+}
+if(h==0)
+{
+ h=12;
+}
+document.getElementById('clock').innerHTML=h+":"+m+":"+s+" "+ap
+setTimeout('startTime()', 500)
+}
+
+/* 24 hour format */
+function format()
+{
+var time = new Date();
+var h = time.getHours();
+var m = time.getMinutes();
+var s = time.getSeconds();
+var ap = 'PM';
+if(h > 24)
+{
+ ap = 'AM';
+ h = h -24;
+}
+if (h < 10){
+h = " " + h
+}
+if (m < 10){
+m = "0" + m
+}
+if (s < 10){
+s = "0" + s
+}
+document.getElementById('clock1').innerHTML=h+":"+m+":"+s+" "+ap
+setTimeout("format()", 1000);
+}
+
+</script>
+<body>
+<div id="clock"></div>
+<div id="clock1"></div>
+<button id ="btn1" onclick="startTime()">12 hour format</button>
+<button id="btn2" onclick="format()">24 hour format</button>
+</body>
+</html>

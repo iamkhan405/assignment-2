@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>Add and display items of an array</title>
+</head>
+<script>
+var a = Array();
+var i = 0, j; 
+
+function addItems()
+{
+ a[i] = document.getElementById("txt").value;
+ alert("Element: " + a[i] + " is added at index " + i);
+ i++;
+ document.getElementById("txt").value = "";
+}
+
+function displayItems()
+{
+ var b = "<hr/>";   
+ for (j=0; j<a.length; j++)
+ {
+  b += "Element " + j + " = " + a[j] + "<br/>";
+ }
+ document.getElementById("output").innerHTML = b;
+}
+
+</script>
+<body>
+<input type="text" id="txt"></input>
+<input type="button" id="btn1" value="Add" onclick="addItems();"></input>
+<input type="button" id="btn2" value="Display" onclick="displayItems();"></input>
+<div id="output"></div>
+</body>
+</html>
